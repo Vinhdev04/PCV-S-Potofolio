@@ -513,12 +513,13 @@ body.dark-mode .contact-link:hover {
 .about-footer {
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  padding-bottom: 20px;
 }
 
 body.dark-mode .about-footer {

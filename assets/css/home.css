@@ -1,30 +1,30 @@
-/**
- * ===== HOME SECTION CSS =====
- * Styling cho hero section, greeting, profile, stats
- */
+:root {
+  --primary-color: #0066ff;
+  --text-dark: #1a1a1a;
+  --text-light: #666666;
+  --border-color: #e0e0e0;
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
 
-/* ===== HOME SECTION CONTAINER ===== */
+body.dark-mode {
+  --text-dark: #ffffff;
+  --text-light: #b0b0b0;
+  --border-color: rgba(255, 255, 255, 0.1);
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
+
+/* ===== HOME SECTION ===== */
 .section__home {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 100px;
-  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  padding: 100px 0 50px;
 }
 
-body.dark-mode .section__home {
-  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a2332 100%);
-}
-
-/* ===== HOME WRAPPER (Two Columns) ===== */
-.home__wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-/* ===== HOME CONTENT (Left Side) ===== */
+/* ===== HOME CONTENT (Left Column) ===== */
 .home__content {
   animation: fadeInLeft 0.8s ease-out;
 }
@@ -35,10 +35,6 @@ body.dark-mode .section__home {
   line-height: 1.1;
   margin-bottom: 0.5rem;
   color: var(--text-dark);
-}
-
-body.dark-mode .home__greeting {
-  color: #ffffff;
 }
 
 .home__name {
@@ -53,18 +49,29 @@ body.dark-mode .home__greeting {
   color: var(--text-light);
   margin-bottom: 1rem;
   letter-spacing: 1px;
+  width: 120px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--primary-color);
+  transition: 0.3s all ease-in;
+  animation: typing 2s steps(15, end) forwards, blink 0.75s step-end infinite;
 }
 
 .home__description {
-  font-size: var(--font-size-lg);
+  font-size: 1.1rem;
   color: var(--text-light);
   line-height: 1.8;
   margin-bottom: 2rem;
-  max-width: 500px;
 }
-
+.home__download--icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  object-fit: cover;
+}
 /* ===== TYPING EFFECT ===== */
 .home__typing {
+  transition: 0.3s all ease-in;
   border-right: 3px solid var(--primary-color);
   animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
   white-space: nowrap;
@@ -78,20 +85,18 @@ body.dark-mode .home__greeting {
 }
 
 .home__social-label {
-  font-size: var(--font-size-base);
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text-dark);
   margin-bottom: 1rem;
-}
-
-body.dark-mode .home__social-label {
-  color: #ffffff;
+  display: block;
 }
 
 .home__social-links {
   display: flex;
   gap: 1rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 /* ===== SOCIAL ICONS ===== */
@@ -106,7 +111,7 @@ body.dark-mode .home__social-label {
   color: var(--text-dark);
   font-size: 1.2rem;
   transition: var(--transition);
-  position: relative;
+  text-decoration: none;
 }
 
 body.dark-mode .social-icon {
@@ -146,6 +151,40 @@ body.dark-mode .social-icon {
   flex-wrap: wrap;
 }
 
+.btn-primary,
+.btn-secondary {
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0052cc;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
 /* ===== STATS ===== */
 .home__stats {
   display: grid;
@@ -154,10 +193,6 @@ body.dark-mode .social-icon {
   margin-top: 3rem;
   padding-top: 3rem;
   border-top: 2px solid var(--border-color);
-}
-
-body.dark-mode .home__stats {
-  border-top-color: rgba(255, 255, 255, 0.1);
 }
 
 .stat {
@@ -172,12 +207,12 @@ body.dark-mode .home__stats {
 }
 
 .stat__label {
-  font-size: var(--font-size-sm);
+  font-size: 0.9rem;
   color: var(--text-light);
   font-weight: 500;
 }
 
-/* ===== HOME VISUAL (Right Side) ===== */
+/* ===== HOME VISUAL (Right Column) ===== */
 .home__visual {
   position: relative;
   display: flex;
@@ -197,11 +232,6 @@ body.dark-mode .home__stats {
   border: 5px solid var(--primary-color);
   box-shadow: var(--shadow-xl), 0 0 30px rgba(0, 102, 255, 0.2);
   animation: float 3s ease-in-out infinite;
-}
-
-body.dark-mode .profile-circle {
-  border-color: var(--primary-color);
-  box-shadow: var(--shadow-xl), 0 0 40px rgba(0, 102, 255, 0.3);
 }
 
 .profile-circle__image {
@@ -229,7 +259,6 @@ body.dark-mode .profile-circle {
 
 body.dark-mode .floating-icon {
   background-color: rgba(255, 255, 255, 0.1);
-  color: var(--primary-color);
 }
 
 .floating-icon__1 {
@@ -251,15 +280,102 @@ body.dark-mode .floating-icon {
   animation-delay: 2s;
 }
 
-/* ===== RESPONSIVE HOME ===== */
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 330px;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-right-color: var(--primary-color);
+  }
+
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes floatCircle {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(10px, -10px);
+  }
+
+  50% {
+    transform: translate(0, -20px);
+  }
+
+  75% {
+    transform: translate(-10px, -10px);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .home__wrapper {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .section__home {
+    padding: 80px 0 30px;
   }
 
   .home__visual {
     min-height: 300px;
+    margin-top: 2rem;
   }
 
   .profile-circle {
@@ -268,12 +384,13 @@ body.dark-mode .floating-icon {
   }
 
   .home__actions {
-    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  .btn {
+  .btn-primary,
+  .btn-secondary {
     width: 100%;
-    justify-content: center;
+    text-align: center;
   }
 
   .home__stats {

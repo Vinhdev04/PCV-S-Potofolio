@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Craft Portfolio - Vinh | Front-End Developer</title>
-    <link rel="shortcut icon" href="./assets/images/click.gif" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/curriculum-vitae.png" type="image/x-icon">
     <!-- ===== CSS IMPORTS ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
@@ -34,116 +34,121 @@
 
 <body>
     <!-- ===== NAVIGATION BAR ===== -->
-    <nav class="navbar navbar__main" id="navbar">
-        <div class="container">
-            <div class="row w-100">
-                <div class="col-12">
-                    <div class="navbar__wrapper">
-                        <div class="navbar__brand">
-                            <i class="fas fa-code"></i> Craft Portfolio
-                        </div>
-                        <button class="navbar__toggle" id="navToggle">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                        <ul class="navbar__menu" id="navMenu">
-                            <li class="navbar__item"><a href="#home" class="navbar__link active">Home</a></li>
-                            <li class="navbar__item"><a href="#about" class="navbar__link">About</a></li>
-                            <li class="navbar__item"><a href="#education" class="navbar__link">Education</a></li>
-                            <li class="navbar__item"><a href="#skills" class="navbar__link">Skills</a></li>
-                            <li class="navbar__item"><a href="#projects" class="navbar__link">Project</a></li>
-                            <li class="navbar__item"><a href="#contact" class="navbar__link">Contact</a></li>
-                            <li class="navbar__item">
-                                <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
-                                    <i class="fas fa-moon"></i>
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
+    <header>
+        <nav class="navbar navbar__main" id="navbar">
+            <div class="navbar__wrapper">
+                <div class="navbar__brand">
+                    <i class="fas fa-code"></i>
+                    <span>Craft Portfolio</span>
                 </div>
+                <button class="navbar__toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="navbar__menu" id="navMenu">
+                    <li class="navbar__item"><a href="#home" class="navbar__link active">Home</a></li>
+                    <li class="navbar__item"><a href="#about" class="navbar__link">About</a></li>
+                    <li class="navbar__item"><a href="#education" class="navbar__link">Education</a></li>
+                    <li class="navbar__item"><a href="#skills" class="navbar__link">Skills</a></li>
+                    <li class="navbar__item"><a href="#projects" class="navbar__link">Project</a></li>
+                    <li class="navbar__item"><a href="#contact" class="navbar__link">Contact</a></li>
+                    <li class="navbar__item">
+                        <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- ===== MAIN CONTENT ===== -->
     <main class="container-fluid">
         <!-- ===== HOME SECTION ===== -->
-        <section id="home" class="section section__home">
-            <div class="container">
-                <div class="home__wrapper">
-                    <!-- LEFT CONTENT -->
-                    <div class="home__content">
-                        <h1 class="home__greeting">Hi, I'm <span class="home__name">Vinh</span></h1>
-                        <p class="home__title">Front-End Developer</p>
-                        <p class="home__description">
-                            I craft user interfaces with the spirit of poetry and logic.
-                            <span class="home__typing"></span>
-                        </p>
-
-                        <!-- SOCIAL LINKS -->
-                        <div class="home__social">
-                            <p class="home__social-label">Follow me on:</p>
-                            <div class="home__social-links">
-                                <a href="#" class="social-icon social-icon__github" title="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="#" class="social-icon social-icon__linkedin" title="LinkedIn">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="#" class="social-icon social-icon__instagram" title="Instagram">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="#" class="social-icon social-icon__twitter" title="Twitter">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
+        <section class="section__home">
+            <div class="container-lg">
+                <div class="row align-items-center g-4">
+                    <!-- LEFT COLUMN: CONTENT -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="home__content">
+                            <h1 class="home__greeting">Hi, I'm <span class="home__name">Vinh</span></h1>
+                            <p class="home__title">Front-End Developer</p>
+                            <p class="home__description">
+                                I craft user interfaces with the spirit of poetry and logic.
+                                <span class="home__typing"></span>
+                            </p>
+        
+                            <!-- SOCIAL LINKS -->
+                            <div class="home__social">
+                                <span class="home__social-label">Follow me on:</span>
+                                <div class="home__social-links">
+                                    <a href="https://www.facebook.com/i.padygamy1210" target="_blank" rel="noopener noreferrer" class="social-link"
+                                        title="facebook">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                    <a href="https://github.com/Vinhdev04" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                                        <i class="bx bxl-github"></i>
+                                    </a>
+                                    <a href="https://www.tiktok.com/@bugwhisperers" target="_blank" rel="noopener noreferrer" class="social-link"
+                                        title="tiktok">
+                                        <i class="fa-brands fa-tiktok"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/its_me_vinh/" target="_blank" rel="noopener noreferrer" class="social-link"
+                                        title="instagram">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-
-                        <!-- ACTION BUTTONS -->
-                        <div class="home__actions">
-                            <button class="btn btn__primary">
-                                <i class="fas fa-download"></i> Download CV
-                            </button>
-                            <button class="btn btn__secondary">
-                                <i class="fas fa-envelope"></i> Contact Me
-                            </button>
-                        </div>
-
-                        <!-- STATS -->
-                        <div class="home__stats">
-                            <div class="stat stat__experience">
-                                <p class="stat__number">3+</p>
-                                <p class="stat__label">Years of Experience</p>
+        
+                            <!-- ACTION BUTTONS -->
+                            <div class="home__actions">
+                                <button class="btn-primary" download> 
+                                    <img class="home__download--icon" src="./assets/images/contact.gif" alt=""> Contact Me
+                                </button>
+                                <button class="btn-secondary">
+                                    
+                                    <img class="home__download--icon" src="./assets/images/download.gif" alt=""> Download CV
+                                </button>
                             </div>
-                            <div class="stat stat__projects">
-                                <p class="stat__number">20+</p>
-                                <p class="stat__label">Projects Completed</p>
-                            </div>
-                            <div class="stat stat__clients">
-                                <p class="stat__number">10+</p>
-                                <p class="stat__label">Happy Clients</p>
-                            </div>
-                            <div class="stat stat__tech">
-                                <p class="stat__number">5</p>
-                                <p class="stat__label">Tech Stack Mastered</p>
+        
+                            <!-- STATS -->
+                            <div class="home__stats">
+                                <div class="stat stat__experience">
+                                    <p class="stat__number">3+</p>
+                                    <p class="stat__label">Years of Experience</p>
+                                </div>
+                                <div class="stat stat__projects">
+                                    <p class="stat__number">20+</p>
+                                    <p class="stat__label">Projects Completed</p>
+                                </div>
+                                <div class="stat stat__clients">
+                                    <p class="stat__number">10+</p>
+                                    <p class="stat__label">Happy Clients</p>
+                                </div>
+                                <div class="stat stat__tech">
+                                    <p class="stat__number">5</p>
+                                    <p class="stat__label">Tech Stack Mastered</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- RIGHT VISUAL -->
-                    <div class="home__visual">
-                        <div class="profile-circle profile-circle__main">
-                            <img src="./assets/images/avt.jpg" alt="Vinh" class="profile-circle__image">
-                        </div>
-                        <div class="floating-icon floating-icon__1">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="floating-icon floating-icon__2">
-                            <i class="fas fa-laptop"></i>
-                        </div>
-                        <div class="floating-icon floating-icon__3">
-                            <i class="fas fa-database"></i>
+        
+                    <!-- RIGHT COLUMN: VISUAL -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="home__visual">
+                            <div class="profile-circle profile-circle__main">
+                                <img src="./assets/images/avt.jpg" alt="Vinh" class="profile-circle__image">
+                            </div>
+                            <div class="floating-icon floating-icon__1">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="floating-icon floating-icon__2">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="floating-icon floating-icon__3">
+                                <i class="fas fa-database"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -171,7 +176,32 @@
                             <img alt="Profile" class="about-image" src="./assets/images/avt.jpg">
                         </div>
                     </div>
-        
+                <!-- ===== FOOTER: SOCIAL + CV ===== -->
+                <div class="about-footer aos-init" data-aos="fade-up" data-aos-delay="600">
+                    <p class="about-footer__label">Follow me on:</p>
+                
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/i.padygamy1210" target="_blank" rel="noopener noreferrer" class="social-link"
+                            title="facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://github.com/Vinhdev04" target="_blank" rel="noopener noreferrer" class="social-link"
+                            title="GitHub">
+                            <i class="bx bxl-github"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@bugwhisperers" target="_blank" rel="noopener noreferrer" class="social-link"
+                            title="tiktok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.instagram.com/its_me_vinh/" target="_blank" rel="noopener noreferrer" class="social-link"
+                            title="instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="./pages/cv.html" class="btn-download">
+                            <img class="about__view--cv" src="./assets/images/view (1).gif"> Preview CV
+                        </a>
+                    </div>
+                </div>
                     <!-- ROW 2: CARDS GRID (6 COLUMNS LAYOUT) -->
                     <div class="col-12">
                         <div class="about-cards-container">
@@ -331,44 +361,12 @@
                             </div>
                         </div>
         
-                        <!-- ===== FOOTER: SOCIAL + CV ===== -->
-                        <div class="about-footer aos-init" data-aos="fade-up" data-aos-delay="600">
-                            <p class="about-footer__label">Follow me on:</p>
-        
-                            <div class="social-links">
-                                <a href="https://www.facebook.com/i.padygamy1210" target="_blank" rel="noopener noreferrer" class="social-link"
-                                    title="facebook">
-                                    <i class="fa-brands fa-facebook"></i>
-                                </a>
-                                <a href="https://github.com/Vinhdev04" target="_blank" rel="noopener noreferrer" class="social-link"
-                                    title="GitHub">
-                                    <i class="bx bxl-github"></i>
-                                </a>
-                                <a href="https://www.tiktok.com/@bugwhisperers" target="_blank" rel="noopener noreferrer" class="social-link"
-                                    title="tiktok">
-                                    <i class="fa-brands fa-tiktok"></i>
-                                </a>
-                                <a href="https://www.instagram.com/its_me_vinh/" target="_blank" rel="noopener noreferrer" class="social-link"
-                                    title="instagram">
-                                <i class="fa-brands fa-instagram"></i>
-                                </a>
-                                <a href="./pages/cv.html" class="btn-download" >
-                                    <img class="about__view--cv" src="./assets/images/view (1).gif"> Preview CV
-                                </a>
-                            </div>
-        
-                        </div>
+                       
                     </div>
                 </div>
             </div>
         </section>
         
-        
-    
- 
-    
-   
-
         <!-- ===== EDUCATION SECTION ===== -->
         <section id="education" class="section section__education">
             <div class="container">
