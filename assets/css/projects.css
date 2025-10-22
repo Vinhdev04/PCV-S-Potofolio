@@ -1,0 +1,198 @@
+/**
+ * ===== PROJECTS SECTION CSS =====
+ * Styling cho project cards, filters, demo links
+ */
+
+/* ===== PROJECTS SECTION ===== */
+.section__projects {
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+}
+
+body.dark-mode .section__projects {
+  background: linear-gradient(135deg, #1a2332 0%, var(--dark-bg) 100%);
+}
+
+/* ===== PROJECTS FILTER ===== */
+.projects__filter {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.projects__filter-btn {
+  padding: 12px 24px;
+  border: 2px solid var(--border-color);
+  background-color: white;
+  color: var(--text-dark);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+body.dark-mode .projects__filter-btn {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.projects__filter-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.projects__filter-btn--active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* ===== PROJECTS GRID ===== */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* ===== PROJECT CARD ===== */
+.project-card {
+  padding: 2rem;
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+body.dark-mode .project-card {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ===== PROJECT ICON ===== */
+.project-card__icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.project-card__ecommerce .project-card__icon {
+  color: #0066ff;
+}
+.project-card__portfolio .project-card__icon {
+  color: #00d084;
+}
+.project-card__task .project-card__icon {
+  color: #ff9500;
+}
+.project-card__dashboard .project-card__icon {
+  color: #ff0066;
+}
+.project-card__weather .project-card__icon {
+  color: #0066ff;
+}
+.project-card__chat .project-card__icon {
+  color: #00d084;
+}
+
+/* ===== PROJECT TITLE ===== */
+.project-card__title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+body.dark-mode .project-card__title {
+  color: #ffffff;
+}
+
+/* ===== PROJECT DESCRIPTION ===== */
+.project-card__description {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* ===== PROJECT TAGS ===== */
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-tag {
+  font-size: var(--font-size-sm);
+  padding: 6px 12px;
+  background-color: rgba(0, 102, 255, 0.1);
+  color: var(--primary-color);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+}
+
+body.dark-mode .project-tag {
+  background-color: rgba(0, 102, 255, 0.2);
+}
+
+/* ===== PROJECT LINKS ===== */
+.project-card__links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.project-link {
+  flex: 1;
+  padding: 10px 16px;
+  text-align: center;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.project-link__github {
+  background-color: #333333;
+  color: white;
+}
+
+.project-link__github:hover {
+  background-color: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.project-link__demo {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.project-link__demo:hover {
+  background-color: #0052cc;
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE PROJECTS ===== */
+@media (max-width: 768px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects__filter-btn {
+    padding: 10px 16px;
+    font-size: var(--font-size-sm);
+  }
+}

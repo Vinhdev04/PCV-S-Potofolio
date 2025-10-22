@@ -1,0 +1,115 @@
+/**
+         * ===== SCROLL TO TOP BUTTON =====
+         */
+.scroll-to-top {
+  /**
+             * Position & Size
+             * - Fixed position: tetap di layar
+             * - Bottom & Right: 30px dari sudut kanan bawah
+             * - Width & Height: 50px (circle)
+             */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+
+  /**
+             * Styling
+             * - Background: Blue gradient
+             * - Border: None
+             * - Border-radius: 50% untuk membuat circle
+             * - Cursor: Pointer
+             */
+  background: linear-gradient(135deg, var(--primary-color), #0052cc);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  /**
+             * Text & Icon
+             * - Color: White
+             * - Font-size: 1.5rem
+             * - Display: Flex untuk center content
+             */
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /**
+             * Shadow & Z-index
+             * - Box-shadow: Drop shadow
+             * - Z-index: 999 để hiển thị trên mọi element
+             */
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+
+  /**
+             * Animation & Transition
+             * - Opacity: 0 (invisible) khi scroll top
+             * - Transform: translateY(10px) 
+             * - Transition: Smooth 0.3s
+             */
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+/**
+         * ===== SCROLL TO TOP - ACTIVE STATE =====
+         * Hiển thị button khi user scroll down
+         */
+.scroll-to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/**
+         * ===== HOVER EFFECT =====
+         */
+.scroll-to-top:hover {
+  /**
+             * Hover Effects
+             * - Transform: Scale up 1.1 (10% lớn hơn)
+             * - Background: Darker gradient
+             * - Shadow: Stronger shadow
+             */
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 15px 40px rgba(0, 102, 255, 0.4);
+}
+
+.scroll-to-top:active {
+  /**
+             * Active State
+             * - Scale: 0.95 (nhỏ hơn khi click)
+             * - TranslateY: 0
+             */
+  transform: translateY(0) scale(0.95);
+}
+
+/**
+         * ===== RESPONSIVE =====
+         */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+    font-size: 1rem;
+  }
+}

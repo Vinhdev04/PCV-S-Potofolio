@@ -1,0 +1,283 @@
+/**
+ * ===== HOME SECTION CSS =====
+ * Styling cho hero section, greeting, profile, stats
+ */
+
+/* ===== HOME SECTION CONTAINER ===== */
+.section__home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+}
+
+body.dark-mode .section__home {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a2332 100%);
+}
+
+/* ===== HOME WRAPPER (Two Columns) ===== */
+.home__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ===== HOME CONTENT (Left Side) ===== */
+.home__content {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.home__greeting {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+body.dark-mode .home__greeting {
+  color: #ffffff;
+}
+
+.home__name {
+  color: var(--primary-color);
+  display: inline-block;
+  animation: scaleUp 2s ease-in-out infinite;
+}
+
+.home__title {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.home__description {
+  font-size: var(--font-size-lg);
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+/* ===== TYPING EFFECT ===== */
+.home__typing {
+  border-right: 3px solid var(--primary-color);
+  animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* ===== SOCIAL LINKS ===== */
+.home__social {
+  margin: 2rem 0;
+}
+
+.home__social-label {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+body.dark-mode .home__social-label {
+  color: #ffffff;
+}
+
+.home__social-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+body.dark-mode .social-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+.social-icon__github:hover {
+  background-color: #333333;
+  color: white;
+}
+
+.social-icon__linkedin:hover {
+  background-color: #0077b5;
+  color: white;
+}
+
+.social-icon__instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743);
+  color: white;
+}
+
+.social-icon__twitter:hover {
+  background-color: #1da1f2;
+  color: white;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.home__actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+/* ===== STATS ===== */
+.home__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 2px solid var(--border-color);
+}
+
+body.dark-mode .home__stats {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat__number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat__label {
+  font-size: var(--font-size-sm);
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* ===== HOME VISUAL (Right Side) ===== */
+.home__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInRight 0.8s ease-out;
+  min-height: 400px;
+}
+
+/* ===== PROFILE CIRCLE ===== */
+.profile-circle {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--primary-color);
+  box-shadow: var(--shadow-xl), 0 0 30px rgba(0, 102, 255, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+body.dark-mode .profile-circle {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-xl), 0 0 40px rgba(0, 102, 255, 0.3);
+}
+
+.profile-circle__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== FLOATING ICONS ===== */
+.floating-icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
+  animation: floatCircle 6s ease-in-out infinite;
+}
+
+body.dark-mode .floating-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary-color);
+}
+
+.floating-icon__1 {
+  top: 30px;
+  left: 30px;
+  animation-delay: 0s;
+}
+
+.floating-icon__2 {
+  top: 50%;
+  right: -30px;
+  transform: translateY(-50%);
+  animation-delay: 1s;
+}
+
+.floating-icon__3 {
+  bottom: -20px;
+  left: 20px;
+  animation-delay: 2s;
+}
+
+/* ===== RESPONSIVE HOME ===== */
+@media (max-width: 768px) {
+  .home__wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .home__visual {
+    min-height: 300px;
+  }
+
+  .profile-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .home__actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
