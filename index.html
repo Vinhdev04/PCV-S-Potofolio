@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="./assets/css/contact.css">
     <link rel="stylesheet" href="./assets/css/back.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
 </head>
 
 <body>
@@ -916,7 +917,7 @@
                         <div class="tools-category tools-category--testing">
                             <div class="tools-category__header">
                                 <div class="tools-category__icon">
-                                <img src="./assets/images/testing.gif" alt="Testing & Deployment" width="50px" height="50px" class="object-fit-cover">
+                                <img src="./assets/images/t" alt="Testing & Deployment" width="50px" height="50px" class="object-fit-cover">
                                 </div>
                                 <h3 class="tools-category__title">Testing & Deployment</h3>
                             </div>
@@ -1107,172 +1108,213 @@
                 </div>
         
                 <!-- TABS -->
-                <div class="contact__tabs">
-                    <button class="contact__tab contact__tab--active" data-tab="form">
-                        <i class="fas fa-envelope"></i>
+                <div class="contact__tabs" role="tablist">
+                    <button class="contact__tab contact__tab--active" data-tab="form" role="tab" aria-selected="true"
+                        aria-controls="form-content">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <span>Contact Form</span>
                     </button>
-                    <button class="contact__tab" data-tab="methods">
-                        <i class="fas fa-address-card"></i>
+                    <button class="contact__tab" data-tab="methods" role="tab" aria-selected="false"
+                        aria-controls="methods-content">
+                        <i class="fas fa-address-card" aria-hidden="true"></i>
                         <span>Contact Methods</span>
                     </button>
                 </div>
         
                 <!-- FORM VIEW -->
-                <div class="contact__wrapper" id="form-content">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-lg-10">
-                            <form class="contact-form" id="contactForm">
-                                <div class="form-group">
-                                    <label for="name" class="form-label">Name</label>
-                                    <input type="text" id="name" name="name" class="form-input" placeholder="Your Name"
-                                        required>
-                                </div>
-        
-                                <div class="form-group">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" id="email" name="email" class="form-input" placeholder="Your Email"
-                                        required>
-                                </div>
-        
-                                <div class="form-group form-group__full">
-                                    <label for="subject" class="form-label">Subject</label>
-                                    <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject"
-                                        required>
-                                </div>
-        
-                                <div class="form-group form-group__full">
-                                    <label for="message" class="form-label">Message</label>
-                                    <textarea id="message" name="message" class="form-textarea" placeholder="Your Message"
-                                        required></textarea>
-                                </div>
-        
-                                <button type="submit" class="btn btn__primary">
-                                    <i class="fas fa-paper-plane"></i> Send Message
-                                </button>
-                            </form>
+                <div class="contact__wrapper" id="form-content" role="tabpanel">
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
                         </div>
-                    </div>
+        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com"
+                                required>
+                        </div>
+        
+                        <div class="form-group form-group__full">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="What's this about?"
+                                required>
+                        </div>
+        
+                        <div class="form-group form-group__full">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea"
+                                placeholder="Tell me more about your project or inquiry..." required></textarea>
+                        </div>
+        
+                        <button type="submit" class="btn btn__primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+        
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle"></i> Message sent successfully!
+                        </div>
+                    </form>
                 </div>
         
                 <!-- METHODS VIEW -->
-                <div class="contact__wrapper" id="methods-content" style="display: none;">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="contact-methods">
-                                <!-- EMAIL CARD -->
-                                <div class="contact-card">
-                                    <div class="contact-card__icon">
+                <div class="contact__wrapper" id="methods-content" style="display: none;" role="tabpanel">
+                    <div class="contact-methods">
+                        <!-- EMAIL CARD -->
+                        <article class="contact-card">
+                            <div class="contact-card__icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3 class="contact-card__title">Email</h3>
+                            <div class="contact-items">
+                                <div class="contact-item">
+                                    <div class="contact-item__icon">
                                         <i class="fas fa-envelope"></i>
                                     </div>
-                                    <h3 class="contact-card__title">Email</h3>
-                                    <div class="contact-items">
-                                        <div class="contact-item">
-                                            <div class="contact-item__icon">
-                                                <i class="fas fa-envelope"></i>
-                                            </div>
-                                            <div class="contact-item__content">
-                                                <div class="contact-item__label">Personal Email</div>
-                                                <div class="contact-item__value">
-                                                    <a href="mailto:vinh@example.com">vinh@example.com</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="contact-item">
-                                            <div class="contact-item__icon">
-                                                <i class="fas fa-envelope"></i>
-                                            </div>
-                                            <div class="contact-item__content">
-                                                <div class="contact-item__label">Work Email</div>
-                                                <div class="contact-item__value">
-                                                    <a href="mailto:vinh.work@example.com">vinh.work@example.com</a>
-                                                </div>
-                                            </div>
+                                    <div class="contact-item__content">
+                                        <div class="contact-item__label">Personal Email</div>
+                                        <div class="contact-item__value">
+                                            <a href="mailto:vinh@example.com">vinh@example.com</a>
                                         </div>
                                     </div>
                                 </div>
-        
-                                <!-- SOCIAL MEDIA CARD -->
-                                <div class="contact-card">
-                                    <div class="contact-card__icon">
-                                        <i class="fas fa-share-alt"></i>
+                                <div class="contact-item">
+                                    <div class="contact-item__icon">
+                                        <i class="fas fa-briefcase"></i>
                                     </div>
-                                    <h3 class="contact-card__title">Social Media</h3>
-                                    <div class="contact-items">
-                                        <div class="contact-item">
-                                            <div class="contact-item__icon">
-                                                <i class="fab fa-linkedin"></i>
-                                            </div>
-                                            <div class="contact-item__content">
-                                                <div class="contact-item__label">LinkedIn</div>
-                                                <div class="contact-item__value">
-                                                    <a href="#" target="_blank">linkedin.com/in/vinh</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="contact-item">
-                                            <div class="contact-item__icon">
-                                                <i class="fab fa-github"></i>
-                                            </div>
-                                            <div class="contact-item__content">
-                                                <div class="contact-item__label">GitHub</div>
-                                                <div class="contact-item__value">
-                                                    <a href="#" target="_blank">github.com/vinh</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <!-- PHONE CARD -->
-                                <div class="contact-card">
-                                    <div class="contact-card__icon">
-                                        <i class="fas fa-phone"></i>
-                                    </div>
-                                    <h3 class="contact-card__title">Phone</h3>
-                                    <div class="contact-items">
-                                        <div class="contact-item">
-                                            <div class="contact-item__icon">
-                                                <i class="fas fa-mobile-alt"></i>
-                                            </div>
-                                            <div class="contact-item__content">
-                                                <div class="contact-item__label">Mobile</div>
-                                                <div class="contact-item__value">
-                                                    <a href="tel:+84889510144">+84 889 5101 444</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="contact-item">
-                                            <div class="contact-item__icon">
-                                                <i class="fab fa-whatsapp"></i>
-                                            </div>
-                                            <div class="contact-item__content">
-                                                <div class="contact-item__label">WhatsApp</div>
-                                                <div class="contact-item__value">
-                                                    <a href="https://wa.me/84889510144" target="_blank">+84 889 5101 444</a>
-                                                </div>
-                                            </div>
+                                    <div class="contact-item__content">
+                                        <div class="contact-item__label">Work Email</div>
+                                        <div class="contact-item__value">
+                                            <a href="mailto:vinh.work@example.com">vinh.work@example.com</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </article>
+        
+                        <!-- SOCIAL MEDIA CARD -->
+                        <article class="contact-card">
+                            <div class="contact-card__icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <h3 class="contact-card__title">Social Media</h3>
+                            <div class="contact-items">
+                                <div class="contact-item">
+                                    <div class="contact-item__icon">
+                                        <i class="fab fa-linkedin"></i>
+                                    </div>
+                                    <div class="contact-item__content">
+                                        <div class="contact-item__label">LinkedIn</div>
+                                        <div class="contact-item__value">
+                                            <a href="https://linkedin.com/in/vinh" target="_blank"
+                                                rel="noopener noreferrer">linkedin.com/in/vinh</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-item__icon">
+                                        <i class="fab fa-github"></i>
+                                    </div>
+                                    <div class="contact-item__content">
+                                        <div class="contact-item__label">GitHub</div>
+                                        <div class="contact-item__value">
+                                            <a href="https://github.com/vinh" target="_blank"
+                                                rel="noopener noreferrer">github.com/vinh</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+        
+                        <!-- PHONE CARD -->
+                        <article class="contact-card">
+                            <div class="contact-card__icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3 class="contact-card__title">Phone</h3>
+                            <div class="contact-items">
+                                <div class="contact-item">
+                                    <div class="contact-item__icon">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div class="contact-item__content">
+                                        <div class="contact-item__label">Mobile</div>
+                                        <div class="contact-item__value">
+                                            <a href="tel:+84889510144">+84 889 510 144</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-item__icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div class="contact-item__content">
+                                        <div class="contact-item__label">WhatsApp</div>
+                                        <div class="contact-item__value">
+                                            <a href="https://wa.me/84889510144" target="_blank" rel="noopener noreferrer">+84
+                                                889 510 144</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
-            <div class="footer__content">
-                <p>&copy; VaniizIT 2025 Craft Portfolio . All rights reserved.</p>
-                <div class="footer__links">
-                    <a href="#" class="footer__link">Privacy Policy</a>
-                    <a href="#" class="footer__link">Terms of Service</a>
-                    <a href="#" class="footer__link">Sitemap</a>
+            <div class="footer__container">
+                <div class="footer__column footer__brand">
+                    <a href="#home" class="footer__brand-link">
+                        <i class="fas fa-code"></i>
+                        <span>Craft Portfolio</span>
+                    </a>
+                    <p class="footer__description">
+                        Một lập trình viên frontend đam mê tạo ra các giao diện web đẹp mắt và thân thiện với người dùng.
+                    </p>
                 </div>
+
+                <div class="footer__column footer__navigation">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#about" class="footer__link">About</a></li>
+                        <li class="footer__item"><a href="#education" class="footer__link">Education</a></li>
+                        <li class="footer__item"><a href="#skills" class="footer__link">Skills</a></li>
+                        <li class="footer__item"><a href="#projects" class="footer__link">Projects</a></li>
+                        <li class="footer__item"><a href="#contact" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column footer__social">
+                    <h3 class="footer__title">Follow Me</h3>
+                    <div class="footer__social-links">
+                        <a href="https://www.facebook.com/i.padygamy1210" target="_blank" rel="noopener noreferrer"
+                            class="footer__social-link" title="Facebook">
+                            <i class="bx bxl-facebook"></i>
+                        </a>
+                        <a href="https://github.com/Vinhdev04" target="_blank" rel="noopener noreferrer"
+                            class="footer__social-link" title="GitHub">
+                            <i class="bx bxl-github"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@bugwhisperers" target="_blank" rel="noopener noreferrer"
+                            class="footer__social-link" title="TikTok">
+                            <i class="bx bxl-tiktok"></i>
+                        </a>
+                        <a href="https://www.instagram.com/its_me_vinh/" target="_blank" rel="noopener noreferrer"
+                            class="footer__social-link" title="Instagram">
+                            <i class="bx bxl-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2025 VaniizIT | Craft Portfolio. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -1281,6 +1323,8 @@
     <button class="scroll-to-top" id="scrollToTop" title="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <!-- ===== JAVASCRIPT IMPORTS ===== -->
     <script src="./assets/js/skill.js"></script>
