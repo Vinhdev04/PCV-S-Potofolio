@@ -97,7 +97,7 @@ body.dark-mode .education__tab {
 }
 
 .education__tab:hover {
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
 }
 
 .education__tab--active {

@@ -491,12 +491,14 @@ body.dark-mode .contact-link:hover {
   font-size: 0.75rem;
   transition: var(--transition);
   box-shadow: 0 2px 8px rgba(0, 102, 255, 0.2);
+  text-decoration: none;
 }
 
 .contact-social a:hover {
   transform: translateY(-3px) scale(1.1);
   box-shadow: 0 6px 16px rgba(0, 102, 255, 0.4);
   color: white;
+  background-color: aliceblue !important;
 }
 
 .contact__about--icon {
