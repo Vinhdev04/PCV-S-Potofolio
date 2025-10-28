@@ -1,598 +1,280 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Section</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --text-dark: #2d3748;
-            --text-muted: #718096;
-            --bg-white: #ffffff;
-            --bg-light: #f7fafc;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 2rem 1rem;
-        }
-
-        .section {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .container {
-            width: 100%;
-        }
-
-        /* Section Header */
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section__title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            color: white;
-            margin-bottom: 0.75rem;
-        }
-
-        .section__title-accent {
-            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section__subtitle {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Tabs */
-        .contact__tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .contact__tab {
-            padding: 0.875rem 1.75rem;
-            background: rgba(255, 255, 255, 0.95);
-            border: 2px solid transparent;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.625rem;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            backdrop-filter: blur(10px);
-        }
-
-        .contact__tab:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .contact__tab--active {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .contact__tab i {
-            font-size: 1.1rem;
-        }
-
-        /* Contact Form */
-        .contact__wrapper {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .contact-form {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--bg-white);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.75rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group__full {
-            grid-column: 1 / -1;
-        }
-
-        .form-label {
-            font-weight: 600;
-            margin-bottom: 0.625rem;
-            color: var(--text-dark);
-            font-size: 0.95rem;
-        }
-
-        .form-input,
-        .form-textarea {
-            padding: 0.875rem 1.125rem;
-            border: 2px solid var(--border-color);
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: var(--transition);
-            background: var(--bg-light);
-            color: var(--text-dark);
-            font-family: inherit;
-        }
-
-        .form-input:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 150px;
-            line-height: 1.6;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.625rem;
-            justify-content: center;
-            font-family: inherit;
-        }
-
-        .btn__primary {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            box-shadow: var(--shadow-md);
-            grid-column: 1 / -1;
-        }
-
-        .btn__primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn__primary:active {
-            transform: translateY(0);
-        }
-
-        /* Contact Methods */
-        .contact-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .contact-card {
-            background: var(--bg-white);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
-            transition: var(--transition);
-        }
-
-        .contact-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        }
-
-        .contact-card__icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-md);
-        }
-
-        .contact-card__title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-        }
-
-        .contact-items {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1.125rem;
-            background: var(--bg-light);
-            border-radius: 12px;
-            transition: var(--transition);
-        }
-
-        .contact-item:hover {
-            background: #edf2f7;
-            transform: translateX(5px);
-        }
-
-        .contact-item__icon {
-            width: 45px;
-            height: 45px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 1.1rem;
-        }
-
-        .contact-item__content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .contact-item__label {
-            font-weight: 600;
-            font-size: 0.875rem;
-            margin-bottom: 0.25rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .contact-item__value {
-            font-size: 1rem;
-        }
-
-        .contact-item__value a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        .contact-item__value a:hover {
-            color: var(--secondary-color);
-            text-decoration: underline;
-        }
-
-        /* Success Message */
-        .success-message {
-            display: none;
-            padding: 1rem 1.5rem;
-            background: #48bb78;
-            color: white;
-            border-radius: 10px;
-            margin-top: 1rem;
-            text-align: center;
-            font-weight: 500;
-            animation: slideDown 0.3s ease-out;
-            grid-column: 1 / -1;
-        }
-
-        .success-message.show {
-            display: block;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .contact-form {
-                grid-template-columns: 1fr;
-                padding: 1.5rem;
-            }
-
-            .contact__tab span {
-                display: none;
-            }
-
-            .contact__tab {
-                padding: 0.75rem 1rem;
-            }
-
-            .contact-methods {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>CV - Phạm Công Vinh | Frontend Developer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+   
 </head>
 
 <body>
-    <section id="contact" class="section">
-        <div class="container">
-            <!-- SECTION HEADER -->
-            <div class="section-header">
-                <h2 class="section__title">
-                    Get in <span class="section__title-accent">Touch</span>
-                </h2>
-                <p class="section__subtitle">
-                    Reach out to collaborate or discuss opportunities
-                </p>
-            </div>
-
-            <!-- TABS -->
-            <div class="contact__tabs" role="tablist">
-                <button class="contact__tab contact__tab--active" data-tab="form" role="tab" aria-selected="true"
-                    aria-controls="form-content">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <span>Contact Form</span>
-                </button>
-                <button class="contact__tab" data-tab="methods" role="tab" aria-selected="false"
-                    aria-controls="methods-content">
-                    <i class="fas fa-address-card" aria-hidden="true"></i>
-                    <span>Contact Methods</span>
-                </button>
-            </div>
-
-            <!-- FORM VIEW -->
-            <div class="contact__wrapper" id="form-content" role="tabpanel">
-                <form class="contact-form" id="contactForm" novalidate>
-                    <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="profile">
+                    <h1>Phạm Công Vinh</h1>
+                    <span class="role">Intern Frontend Developer</span>
+                    <p class="bio">
+                        Passionate Frontend Developer with experience in Javascript, ReactJS, and NodeJs.
+                        I enjoy solving problems and improving my skills. Eager to learn and contribute
+                        to meaningful projects.
+                    </p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <i class='bx bx-phone'></i>
+                        <a href="tel:0352032375">0352032375</a>
                     </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-input"
-                            placeholder="your.email@example.com" required>
+                    <div class="contact-item">
+                        <i class='bx bx-envelope'></i>
+                        <a href="mailto:vaniizit@gmail.com">vaniizit@gmail.com</a>
                     </div>
-
-                    <div class="form-group form-group__full">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-input"
-                            placeholder="What's this about?" required>
+                    <div class="contact-item">
+                        <i class='bx bx-map'></i>
+                        <span>Thủ Đức, TP.HCM</span>
                     </div>
-
-                    <div class="form-group form-group__full">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-textarea"
-                            placeholder="Tell me more about your project or inquiry..." required></textarea>
+                    <div class="contact-item">
+                        <i class='bx bxl-github'></i>
+                        <a href="https://github.com/Vinhdev04" target="_blank">github.com/Vinhdev04</a>
                     </div>
-
-                    <button type="submit" class="btn btn__primary">
-                        <i class="fas fa-paper-plane"></i> Send Message
-                    </button>
-
-                    <div class="success-message" id="successMessage">
-                        <i class="fas fa-check-circle"></i> Message sent successfully!
-                    </div>
-                </form>
-            </div>
-
-            <!-- METHODS VIEW -->
-            <div class="contact__wrapper" id="methods-content" style="display: none;" role="tabpanel">
-                <div class="contact-methods">
-                    <!-- EMAIL CARD -->
-                    <article class="contact-card">
-                        <div class="contact-card__icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3 class="contact-card__title">Email</h3>
-                        <div class="contact-items">
-                            <div class="contact-item">
-                                <div class="contact-item__icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-item__content">
-                                    <div class="contact-item__label">Personal Email</div>
-                                    <div class="contact-item__value">
-                                        <a href="mailto:vinh@example.com">vinh@example.com</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-item__icon">
-                                    <i class="fas fa-briefcase"></i>
-                                </div>
-                                <div class="contact-item__content">
-                                    <div class="contact-item__label">Work Email</div>
-                                    <div class="contact-item__value">
-                                        <a href="mailto:vinh.work@example.com">vinh.work@example.com</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- SOCIAL MEDIA CARD -->
-                    <article class="contact-card">
-                        <div class="contact-card__icon">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                        <h3 class="contact-card__title">Social Media</h3>
-                        <div class="contact-items">
-                            <div class="contact-item">
-                                <div class="contact-item__icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </div>
-                                <div class="contact-item__content">
-                                    <div class="contact-item__label">LinkedIn</div>
-                                    <div class="contact-item__value">
-                                        <a href="https://linkedin.com/in/vinh" target="_blank"
-                                            rel="noopener noreferrer">linkedin.com/in/vinh</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-item__icon">
-                                    <i class="fab fa-github"></i>
-                                </div>
-                                <div class="contact-item__content">
-                                    <div class="contact-item__label">GitHub</div>
-                                    <div class="contact-item__value">
-                                        <a href="https://github.com/vinh" target="_blank"
-                                            rel="noopener noreferrer">github.com/vinh</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- PHONE CARD -->
-                    <article class="contact-card">
-                        <div class="contact-card__icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3 class="contact-card__title">Phone</h3>
-                        <div class="contact-items">
-                            <div class="contact-item">
-                                <div class="contact-item__icon">
-                                    <i class="fas fa-mobile-alt"></i>
-                                </div>
-                                <div class="contact-item__content">
-                                    <div class="contact-item__label">Mobile</div>
-                                    <div class="contact-item__value">
-                                        <a href="tel:+84889510144">+84 889 510 144</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-item__icon">
-                                    <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div class="contact-item__content">
-                                    <div class="contact-item__label">WhatsApp</div>
-                                    <div class="contact-item__value">
-                                        <a href="https://wa.me/84889510144" target="_blank"
-                                            rel="noopener noreferrer">+84 889 510 144</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <script>
-        // Tab switching functionality
-        const tabs = document.querySelectorAll('.contact__tab');
-        const formContent = document.getElementById('form-content');
-        const methodsContent = document.getElementById('methods-content');
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">
+                    <i class='bx bx-book'></i>
+                    Học Vấn
+                </h2>
+                <div class="card">
+                    <div class="edu-header">
+                        <div>
+                            <div class="edu-title">Đại học Bách Khoa TP.HCM</div>
+                            <div class="edu-subtitle">Công Nghệ Thông Tin</div>
+                        </div>
+                        <span class="edu-date">2022 - 2026</span>
+                    </div>
+                    <div class="edu-location">
+                        <i class='bx bx-map-pin'></i>
+                        TP. Hồ Chí Minh
+                    </div>
+                    <span class="edu-major">Major: Software Technology</span>
+                </div>
+            </section>
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetTab = tab.dataset.tab;
+            <!-- Objective -->
+            <section class="section">
+                <h2 class="section-title">
+                    <i class='bx bx-target-lock'></i>
+                    Mục Tiêu Nghề Nghiệp
+                </h2>
+                <div class="objective-box">
+                    <p>
+                        Tìm kiếm vị trí Intern Frontend Developer để áp dụng kiến thức nền tảng và có kinh nghiệm
+                        thực tế trong môi trường chuyên nghiệp. Mục tiêu là trở thành một lập trình viên full-stack
+                        có khả năng cao, không ngừng học hỏi và cập nhật công nghệ mới.
+                    </p>
+                </div>
+            </section>
 
-                // Update active states
-                tabs.forEach(t => {
-                    t.classList.remove('contact__tab--active');
-                    t.setAttribute('aria-selected', 'false');
-                });
-                tab.classList.add('contact__tab--active');
-                tab.setAttribute('aria-selected', 'true');
+            <!-- Skills -->
+            <section class="section">
+                <h2 class="section-title">
+                    <i class='bx bx-star'></i>
+                    Kỹ Năng
+                </h2>
+                <div class="skills-grid">
+                    <div class="card">
+                        <div class="skill-category-title">
+                            <i class='bx bx-code'></i>
+                            Frontend
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">HTML5, CSS3, JavaScript (ES6+)</div>
+                            <div class="skill-item">ReactJS, Bootstrap</div>
+                            <div class="skill-item">Responsive UI Design</div>
+                            <div class="skill-item">Ant Design, Mui UI</div>
+                            <div class="skill-item">Tailwind CSS, SCSS/SASS</div>
+                        </div>
+                    </div>
 
-                // Show/hide content
-                if (targetTab === 'form') {
-                    formContent.style.display = 'block';
-                    methodsContent.style.display = 'none';
-                } else {
-                    formContent.style.display = 'none';
-                    methodsContent.style.display = 'block';
-                }
-            });
-        });
+                    <div class="card">
+                        <div class="skill-category-title">
+                            <i class='bx bx-server'></i>
+                            Backend
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">Node.js</div>
+                            <div class="skill-item">RESTful APIs</div>
+                            <div class="skill-item">Express.js</div>
+                            <div class="skill-item">Database Design</div>
+                        </div>
+                    </div>
 
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        const successMessage = document.getElementById('successMessage');
+                    <div class="card">
+                        <div class="skill-category-title">
+                            <i class='bx bx-briefcase'></i>
+                            Soft Skills
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">Team Collaboration</div>
+                            <div class="skill-item">Problem Solving</div>
+                            <div class="skill-item">Agile-Scrum</div>
+                            <div class="skill-item">Git/GitHub</div>
+                            <div class="skill-item">Communication</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+            <!-- Projects -->
+            <section class="section">
+                <h2 class="section-title">
+                    <i class='bx bx-briefcase-alt'></i>
+                    Kinh Nghiệm & Dự Án
+                </h2>
 
-            // Simulate form submission
-            const formData = new FormData(contactForm);
-            console.log('Form submitted:', Object.fromEntries(formData));
+                <div class="card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class='bx bx-code-block'></i>
+                        </div>
+                        <div class="project-title">Portfolio Personal</div>
+                    </div>
+                    <p class="project-desc">
+                        Personal portfolio website showcasing skills, projects, and work experience with modern and
+                        professional design. Features responsive multi-page structure with separate sections for About,
+                        Skills, Education, Projects, and Contact.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Bootstrap</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Vinhdev04/myPotofolio" class="btn" target="_blank">
+                            <i class='bx bxl-github'></i> GitHub
+                        </a>
+                        <a href="https://my-potofolio-ten.vercel.app/" class="btn" target="_blank">
+                            <i class='bx bx-link-external'></i> Preview
+                        </a>
+                    </div>
+                </div>
 
-            // Show success message
-            successMessage.classList.add('show');
+                <div class="card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class='bx bx-joystick'></i>
+                        </div>
+                        <div class="project-title">Stone-Paper-Scissors Game</div>
+                    </div>
+                    <p class="project-desc">
+                        Classic Stone-Paper-Scissors game with clean and intuitive interface. Players can challenge
+                        the computer, track scores in real-time, and easily reset the game with simple yet modern
+                        design.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Bootstrap</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Vinhdev04/Stone-Paper-Scissors" class="btn" target="_blank">
+                            <i class='bx bxl-github'></i> GitHub
+                        </a>
+                        <a href="https://stone-paper-scissors-weld.vercel.app/" class="btn" target="_blank">
+                            <i class='bx bx-link-external'></i> Preview
+                        </a>
+                    </div>
+                </div>
+            </section>
 
-            // Reset form
-            contactForm.reset();
+            <!-- Languages -->
+            <section class="section">
+                <h2 class="section-title">
+                    <i class='bx bx-globe'></i>
+                    Ngôn Ngữ
+                </h2>
+                <div class="skills-grid">
+                    <div class="card">
+                        <div class="skill-category-title">
+                            <i class='bx bx-book-open'></i>
+                            English
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">Read technical documentation</div>
+                            <div class="skill-item">Basic communication</div>
+                        </div>
+                    </div>
 
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 5000);
-        });
-    </script>
+                    <div class="card">
+                        <div class="skill-category-title">
+                            <i class='bx bx-chat'></i>
+                            Tiếng Việt
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">Native speaker</div>
+                            <div class="skill-item">Fluent communication</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tools -->
+            <section class="section">
+                <h2 class="section-title">
+                    <i class='bx bx-wrench'></i>
+                    Công Cụ & Nền Tảng
+                </h2>
+                <div class="skills-grid">
+                    <div class="card">
+                        <div class="skill-category-title">
+                            <i class='bx bx-code-curly'></i>
+                            Development
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">Git & GitHub</div>
+                            <div class="skill-item">VS Code</div>
+                            <div class="skill-item">Postman</div>
+                            <div class="skill-item">DevTools</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="skill-category-title">
+                            <i class='bx bx-paint'></i>
+                            Design
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">Figma</div>
+                            <div class="skill-item">UI/UX Design</div>
+                            <div class="skill-item">Prototyping</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="skill-category-title">
+                            <i class='bx bx-list-check'></i>
+                            Project Management
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">Agile-Scrum</div>
+                            <div class="skill-item">Trello</div>
+                            <div class="skill-item">Task Planning</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 
 </html>
