@@ -31,9 +31,60 @@
     <link rel="stylesheet" href="./assets/css/back.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/preload.css">
+   
 </head>
+<body >
+    <div id="preloader">
+        <div class="loader-container">
+            <!-- Brand Logo -->
+            <div class="loader-brand">
+                <i class="fas fa-code"></i>
+                <span>Craft Portfolio</span>
+            </div>
+    
+            <!-- CHỌN 1 TRONG CÁC STYLE LOADER SAU: -->
+    
+            <!-- Style 1: Spinner (Default) -->
+            <div class="spinner"></div>
+    
+            <!-- Style 2: Circle Dots (Bỏ comment để dùng) -->
+            <!-- <div class="loader-circles">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div> -->
+    
+            <!-- Style 3: Wave Loading (Bỏ comment để dùng) -->
+            <!-- <div class="loader-wave">
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                </div> -->
+    
+            <!-- Loading Text -->
+            <div class="loading-text">Loading</div>
+    
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+    
+            <!-- Percentage -->
+            <div class="loading-percentage" id="loadingPercentage">0%</div>
+    
+            <!-- Dots Animation -->
+            <div class="loading-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
 
-<body>
     <!-- ===== NAVIGATION BAR ===== -->
     <header>
         <nav class="navbar navbar__main" id="navbar">
@@ -65,7 +116,7 @@
     </header>
 
     <!-- ===== MAIN CONTENT ===== -->
-    <main class="container-fluid">
+    <main class="container-fluid" id="mainContent">
         <!-- ===== HOME SECTION ===== -->
         <section class="section__home" data-aos="fade-up">
             <div class="container-lg">
@@ -1337,6 +1388,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="./helpers/emailJS.js"> </script>
+    <script src="./helpers/loadAnimation.js"> </script>
     <script>
         AOS.init();
     </script>
